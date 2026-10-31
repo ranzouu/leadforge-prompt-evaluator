@@ -1,0 +1,2 @@
+[console_scripts]
+leadforge-eval = leadforge_prompt_evaluator.cli:main

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "L001",
+    "name": "Academia exemplo 1",
+    "category": "academia",
+    "city": "Fortaleza",
+    "notes": "Foco em musculação e funcional"
+  },
+  {
+    "id": "L002",
+    "name": "Pet Shop exemplo 2",
+    "category": "pet",
+    "city": "Fortaleza",
+    "notes": "Atendimento de banho e tosa"
+  },
+  {
+    "id": "L003",
+    "name": "Restaurante exemplo 3",
+    "category": "restaurante",
+    "city": "Fortaleza",
+    "notes": "Delivery e atendimento local"
+  }
+]

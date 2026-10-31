@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "leadforge-prompt-evaluator"
+version = "0.1.0"
+description = "Avaliação quantitativa de prompts para qualificação de leads no LeadForge"
+authors = [{name = "Rayson", email = "seu-email@exemplo.com"}]
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+  "pydantic>=2.0",
+  "httpx>=0.27",
+  "tenacity>=9.0",
+  "pandas>=2.0",
+  "rich>=13.0"
+]
+
+[project.scripts]
+leadforge-eval = "leadforge_prompt_evaluator.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

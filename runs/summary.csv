@@ -1,0 +1,4 @@
+variant,runs,errors,labeled,avg_latency_ms,labels
+v1_short,3,0,3,120.0,quente
+v2_structured,3,0,3,120.0,quente
+v3_criteria,3,0,3,120.0,quente

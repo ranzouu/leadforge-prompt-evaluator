@@ -1,0 +1,10 @@
+lead_id,variant,model,latency_ms,prompt_tokens,completion_tokens,label,confidence,reasoning,raw
+L001,v1_short,gpt-4o-mini,120.0,18,1,quente,,quente,quente
+L002,v1_short,gpt-4o-mini,120.0,18,1,quente,,quente,quente
+L003,v1_short,gpt-4o-mini,120.0,18,1,quente,,quente,quente
+L001,v2_structured,gpt-4o-mini,120.0,62,25,quente,92,Perfil com demanda local clara.,"{""label"": ""quente"", ""confidence"": 92, ""reasoning"": ""Perfil com demanda local clara.""}"
+L002,v2_structured,gpt-4o-mini,120.0,62,25,quente,92,Perfil com demanda local clara.,"{""label"": ""quente"", ""confidence"": 92, ""reasoning"": ""Perfil com demanda local clara.""}"
+L003,v2_structured,gpt-4o-mini,120.0,62,25,quente,92,Perfil com demanda local clara.,"{""label"": ""quente"", ""confidence"": 92, ""reasoning"": ""Perfil com demanda local clara.""}"
+L001,v3_criteria,gpt-4o-mini,120.0,74,28,quente,95,Cliente final bem definido e segmento com demanda.,"{""label"": ""quente"", ""confidence"": 95, ""reasoning"": ""Cliente final bem definido e segmento com demanda.""}"
+L002,v3_criteria,gpt-4o-mini,120.0,74,28,quente,95,Cliente final bem definido e segmento com demanda.,"{""label"": ""quente"", ""confidence"": 95, ""reasoning"": ""Cliente final bem definido e segmento com demanda.""}"
+L003,v3_criteria,gpt-4o-mini,120.0,74,28,quente,95,Cliente final bem definido e segmento com demanda.,"{""label"": ""quente"", ""confidence"": 95, ""reasoning"": ""Cliente final bem definido e segmento com demanda.""}"
