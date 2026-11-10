@@ -19,5 +19,68 @@
     "category": "restaurante",
     "city": "Fortaleza",
     "notes": "Delivery e atendimento local"
+  },
+  {
+    "id": "L004",
+    "name": "Academia Corpo em Movimento",
+    "category": "academia",
+    "city": "Fortaleza",
+    "notes": "300 alunos ativos, dono reclama de planilha de horários e perde aluns por desorganização"
+  },
+  {
+    "id": "L005",
+    "name": "Barbearia Navalha Fina",
+    "category": "barbearia",
+    "city": "Caucaia",
+    "notes": "3 barbeiros, agenda no papel, cliente chega e não tem vaga"
+  },
+  {
+    "id": "L006",
+    "name": "Clínica Vet Patinhas",
+    "category": "clinica",
+    "city": "Fortaleza",
+    "notes": "Dona esquece de avisar retorno de vacina, quer lembrete automático"
+  },
+  {
+    "id": "L007",
+    "name": "Padaria Pão Dourado",
+    "category": "padaria",
+    "city": "Maracanaú",
+    "notes": "Encomenda de bolo anotada em caderno, já perdeu duas por esquecimento"
+  },
+  {
+    "id": "L008",
+    "name": "Salão Beauty Space",
+    "category": "salao",
+    "city": "Fortaleza",
+    "notes": "5 profissionais agendando pelo direct, dona não consegue ver a agenda geral"
+  },
+  {
+    "id": "L009",
+    "name": "Loja Bella Moda",
+    "category": "moda",
+    "city": "Aquiraz",
+    "notes": "Vende pelo Instagram, não controla estoque nem grade de tamanho"
+  },
+  {
+    "id": "L010",
+    "name": "Oficina do Juca",
+    "category": "oficina",
+    "city": "Fortaleza",
+    "notes": "Ordem de serviço em papel, orçamento não vira serviço registrado"
+  },
+  {
+    "id": "L011",
+    "name": "Papelaria Criativa",
+    "category": "papelaria",
+    "city": "Eusébio",
+    "notes": "Lista de material escolar copiada à mão, pais pedem catálogo com preço"
+  },
+  {
+    "id": "L012",
+    "name": "Consultório Sorriso",
+    "category": "dentista",
+    "city": "Fortaleza",
+    "notes": "Agenda lotada, secretária marca em dois sistemas diferentes"
   }
 ]
