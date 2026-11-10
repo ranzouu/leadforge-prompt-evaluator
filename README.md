@@ -72,7 +72,7 @@ Latência real: 367–2164 ms (média ~920 ms), ~240 tokens de saída por chamad
 1. Rodada inicial com `openai/gpt-oss-20b` + `max_tokens=200`: 5 erros 429 (sem retry) e **respostas vazias** — o canal de pensamento do modelo de raciocínio comia o budget antes da resposta. Fix: `MAX_TOKENS=1000` (padrão), retry com backoff (5s/15s) e pacing de 2s respeitando 30 RPM do free tier.
 2. Modelo legado: `llama-3.1-8b-instant` foi desligado do free tier da Groq em 16/ago/2026 — o script de rodada descobre os modelos disponíveis na chave.
 
-Space público com a comparação: [`ranzouu/prompt-evaluator`](https://huggingface.co/spaces/ranzouu/prompt-evaluator).
+Space público com a comparação: [`ranzouu/prompt-evaluator`](https://ranzouu-prompt-evaluator.static.hf.space).
 
 ## Variantes avaliadas
 
