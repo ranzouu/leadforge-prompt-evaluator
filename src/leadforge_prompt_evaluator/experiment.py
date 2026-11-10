@@ -84,6 +84,8 @@ def _call_llm(model: str, prompt: str) -> tuple[str, dict]:
     if api_key:
         headers["Authorization"] = f"Bearer {api_key}"
 
+    resp: httpx.Response | None = None
+    latency_ms = 0.0
     backoff_s = (5.0, 15.0)
     with httpx.Client(timeout=timeout) as client:
         for attempt in range(len(backoff_s) + 1):
@@ -105,6 +107,8 @@ def _call_llm(model: str, prompt: str) -> tuple[str, dict]:
                 continue
             break
 
+    if resp is None:
+        raise RuntimeError("LLM: nenhuma resposta recebida")
     if resp.status_code >= 400:
         raise RuntimeError(f"LLM error {resp.status_code}: {resp.text[:200]}")
 
