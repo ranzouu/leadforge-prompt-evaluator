@@ -1,10 +1,71 @@
 lead_id,variant,model,latency_ms,prompt_tokens,completion_tokens,label,confidence,reasoning,raw
-L001,v1_short,gpt-4o-mini,120.0,18,1,quente,,quente,quente
-L002,v1_short,gpt-4o-mini,120.0,18,1,quente,,quente,quente
-L003,v1_short,gpt-4o-mini,120.0,18,1,quente,,quente,quente
-L001,v2_structured,gpt-4o-mini,120.0,62,25,quente,92,Perfil com demanda local clara.,"{""label"": ""quente"", ""confidence"": 92, ""reasoning"": ""Perfil com demanda local clara.""}"
-L002,v2_structured,gpt-4o-mini,120.0,62,25,quente,92,Perfil com demanda local clara.,"{""label"": ""quente"", ""confidence"": 92, ""reasoning"": ""Perfil com demanda local clara.""}"
-L003,v2_structured,gpt-4o-mini,120.0,62,25,quente,92,Perfil com demanda local clara.,"{""label"": ""quente"", ""confidence"": 92, ""reasoning"": ""Perfil com demanda local clara.""}"
-L001,v3_criteria,gpt-4o-mini,120.0,74,28,quente,95,Cliente final bem definido e segmento com demanda.,"{""label"": ""quente"", ""confidence"": 95, ""reasoning"": ""Cliente final bem definido e segmento com demanda.""}"
-L002,v3_criteria,gpt-4o-mini,120.0,74,28,quente,95,Cliente final bem definido e segmento com demanda.,"{""label"": ""quente"", ""confidence"": 95, ""reasoning"": ""Cliente final bem definido e segmento com demanda.""}"
-L003,v3_criteria,gpt-4o-mini,120.0,74,28,quente,95,Cliente final bem definido e segmento com demanda.,"{""label"": ""quente"", ""confidence"": 95, ""reasoning"": ""Cliente final bem definido e segmento com demanda.""}"
+L001,v1_short,openai/gpt-oss-20b,550.8,107,200,,,,
+L002,v1_short,openai/gpt-oss-20b,677.73,107,200,,,,
+L003,v1_short,openai/gpt-oss-20b,721.69,107,200,,,,
+L004,v1_short,openai/gpt-oss-20b,522.28,107,131,,,"Para classificar corretamente, preciso de mais informações sobre o lead. Por favor, forneça detalhes relevantes (por exemplo, engajamento, interesse, orçamento, prazo, etc.).","Para classificar corretamente, preciso de mais informações sobre o lead. Por favor, forneça detalhes relevantes (por exemplo, engajamento, interesse, orçamento, prazo, etc.)."
+L005,v1_short,openai/gpt-oss-20b,666.94,107,127,,,"Para classificar o lead, preciso de mais informações sobre ele. Por favor, forneça detalhes relevantes (por exemplo, engajamento, orçamento, necessidade, timeline, etc.).","Para classificar o lead, preciso de mais informações sobre ele. Por favor, forneça detalhes relevantes (por exemplo, engajamento, orçamento, necessidade, timeline, etc.)."
+L006,v1_short,openai/gpt-oss-20b,1101.71,107,200,,,,
+L007,v1_short,openai/gpt-oss-20b,779.44,107,200,,,,
+L008,v1_short,openai/gpt-oss-20b,643.23,107,150,,,"Para classificar corretamente, preciso de mais informações sobre o lead. Por favor, forneça detalhes relevantes (por exemplo, engajamento, interesse, orçamento, prazo, etc.).","Para classificar corretamente, preciso de mais informações sobre o lead. Por favor, forneça detalhes relevantes (por exemplo, engajamento, interesse, orçamento, prazo, etc.)."
+L009,v1_short,openai/gpt-oss-20b,502.4,107,161,,,"Para classificar corretamente, preciso de mais informações sobre o lead. Por favor, forneça detalhes relevantes (por exemplo, interesse demonstrado, interação recente, orçamento, prazo, etc.).","Para classificar corretamente, preciso de mais informações sobre o lead. Por favor, forneça detalhes relevantes (por exemplo, interesse demonstrado, interação recente, orçamento, prazo, etc.)."
+L010,v1_short,openai/gpt-oss-20b,625.83,107,200,,,,
+L011,v1_short,openai/gpt-oss-20b,698.36,107,176,,,"Para classificar corretamente, preciso de mais informações sobre o lead. Por favor, forneça detalhes relevantes (por exemplo, engajamento, interesse, orçamento, prazo, etc.).","Para classificar corretamente, preciso de mais informações sobre o lead. Por favor, forneça detalhes relevantes (por exemplo, engajamento, interesse, orçamento, prazo, etc.)."
+L012,v1_short,openai/gpt-oss-20b,1637.9,107,200,,,,
+L001,v2_structured,openai/gpt-oss-20b,532.43,124,200,,,,
+L002,v2_structured,openai/gpt-oss-20b,698.15,124,200,,,,
+L003,v2_structured,openai/gpt-oss-20b,651.13,124,200,,,,
+L004,v2_structured,openai/gpt-oss-20b,617.38,124,169,frio,70,Sem indicação de interesse ou interação prévia com o negócio.,"{""label"":""frio"",""confidence"":70,""reasoning"":""Sem indicação de interesse ou interação prévia com o negócio.""}"
+L005,v2_structured,openai/gpt-oss-20b,1651.69,130,200,,,,
+L006,v2_structured,openai/gpt-oss-20b,676.14,124,200,,,,
+L007,v2_structured,openai/gpt-oss-20b,679.32,130,200,quente,,"```json
+{
+  ""label"": ""quente"",
+  ""confidence"": 80,
+  ""reasoning"": ""Maracanaú","```json
+{
+  ""label"": ""quente"",
+  ""confidence"": 80,
+  ""reasoning"": ""Maracanaú"
+L008,v2_structured,openai/gpt-oss-20b,651.23,125,200,,,,
+L009,v2_structured,openai/gpt-oss-20b,571.68,125,200,frio,70,Não há dados de interação ou interesse demonstrado pelo cliente.,"```json
+{
+  ""label"": ""frio"",
+  ""confidence"": 70,
+  ""reasoning"": ""Não há dados de interação ou interesse demonstrado pelo cliente.""
+}
+"
+L010,v2_structured,openai/gpt-oss-20b,783.74,124,200,,,,
+L011,v2_structured,openai/gpt-oss-20b,823.39,127,192,frio,70,Não há informações de interesse ou interação prévia que indiquem intenção de compra.,"```json
+{
+  ""label"": ""frio"",
+  ""confidence"": 70,
+  ""reasoning"": ""Não há informações de interesse ou interação prévia que indiquem intenção de compra.""
+}
+```"
+L012,v2_structured,openai/gpt-oss-20b,478.81,125,200,,,,
+L001,v3_criteria,openai/gpt-oss-20b,753.71,134,200,,,,
+L002,v3_criteria,openai/gpt-oss-20b,1318.6,134,200,,,,
+L003,v3_criteria,openai/gpt-oss-20b,578.07,134,178,,,"Desculpe, mas preciso de mais informações sobre o lead (por exemplo, descrição do cliente, segmento, tamanho, necessidades, etc.) para classificá‑lo adequadamente. Por favor, forneça esses detalhes.","Desculpe, mas preciso de mais informações sobre o lead (por exemplo, descrição do cliente, segmento, tamanho, necessidades, etc.) para classificá‑lo adequadamente. Por favor, forneça esses detalhes."
+L004,v3_criteria,openai/gpt-oss-20b,541.95,134,200,,,"```json
+{
+  ""label"": ""unknown"",
+  ""confidence"": 0.0,
+  ""","```json
+{
+  ""label"": ""unknown"",
+  ""confidence"": 0.0,
+  """
+L005,v3_criteria,openai/gpt-oss-20b,785.35,134,200,,,,
+L006,v3_criteria,openai/gpt-oss-20b,-1.0,,,,,,"LLM error 429: {""error"":{""message"":""Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kmfzefheedgv365g0bn6ctec` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Reques"
+L007,v3_criteria,openai/gpt-oss-20b,-1.0,,,,,,"LLM error 429: {""error"":{""message"":""Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kmfzefheedgv365g0bn6ctec` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Reques"
+L008,v3_criteria,openai/gpt-oss-20b,-1.0,,,,,,"LLM error 429: {""error"":{""message"":""Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kmfzefheedgv365g0bn6ctec` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Reques"
+L009,v3_criteria,openai/gpt-oss-20b,904.03,134,200,,,,
+L010,v3_criteria,openai/gpt-oss-20b,-1.0,,,,,,"LLM error 429: {""error"":{""message"":""Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kmfzefheedgv365g0bn6ctec` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Reques"
+L011,v3_criteria,openai/gpt-oss-20b,-1.0,,,,,,"LLM error 429: {""error"":{""message"":""Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kmfzefheedgv365g0bn6ctec` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Reques"
+L012,v3_criteria,openai/gpt-oss-20b,784.42,134,173,insufficient_data,0.0,Nenhuma informação sobre o lead foi fornecida para avaliar seu fit.,"```json
+{
+  ""label"": ""insufficient_data"",
+  ""confidence"": 0.0,
+  ""reasoning"": ""Nenhuma informação sobre o lead foi fornecida para avaliar seu fit.""
+}
+```"

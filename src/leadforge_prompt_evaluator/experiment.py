@@ -50,6 +50,21 @@ def _render_prompt(template: str, lead: Lead) -> str:
     return template.replace("{lead_name}", lead.name).replace("{category}", lead.category).replace("{city}", lead.city)
 
 
+_LAST_CALL_TS: float | None = None
+_MIN_INTERVAL_S = float(os.getenv("MIN_REQUEST_INTERVAL_S", "2.0"))
+
+
+def _pace_requests() -> None:
+    """Mantém intervalo mínimo entre chamadas — free tier da Groq tem 30 RPM."""
+    global _LAST_CALL_TS
+    now = time.perf_counter()
+    if _LAST_CALL_TS is not None:
+        wait = _MIN_INTERVAL_S - (now - _LAST_CALL_TS)
+        if wait > 0:
+            time.sleep(wait)
+    _LAST_CALL_TS = time.perf_counter()
+
+
 def _call_llm(model: str, prompt: str) -> tuple[str, dict]:
     api_key = os.getenv("LLM_API_KEY")
     base_url = os.getenv("LLM_BASE_URL", "https://api.openai.com/v1")
@@ -61,22 +76,42 @@ def _call_llm(model: str, prompt: str) -> tuple[str, dict]:
             {"role": "user", "content": prompt},
         ],
         "temperature": 0.2,
-        "max_tokens": 200,
+        # modelos de raciocínio gastam tokens no canal de pensamento antes da
+        # resposta: 200 era curto e devolvia content vazio sem erro
+        "max_tokens": int(os.getenv("MAX_TOKENS", "1000")),
     }
     headers = {"Content-Type": "application/json"}
     if api_key:
         headers["Authorization"] = f"Bearer {api_key}"
 
+    backoff_s = (5.0, 15.0)
     with httpx.Client(timeout=timeout) as client:
-        start = time.perf_counter()
-        resp = client.post(f"{base_url}/chat/completions", json=payload, headers=headers)
-        latency_ms = (time.perf_counter() - start) * 1000
+        for attempt in range(len(backoff_s) + 1):
+            _pace_requests()
+            start = time.perf_counter()
+            try:
+                resp = client.post(f"{base_url}/chat/completions", json=payload, headers=headers)
+            except httpx.HTTPError as exc:
+                if attempt == len(backoff_s):
+                    raise RuntimeError(f"LLM transport error: {exc}") from exc
+                time.sleep(backoff_s[attempt])
+                continue
+            latency_ms = (time.perf_counter() - start) * 1000
+            # 429 (rate limit) e 5xx são transitórios: retry com backoff
+            if resp.status_code == 429 or resp.status_code >= 500:
+                if attempt == len(backoff_s):
+                    raise RuntimeError(f"LLM error {resp.status_code}: {resp.text[:200]}")
+                time.sleep(backoff_s[attempt])
+                continue
+            break
 
     if resp.status_code >= 400:
         raise RuntimeError(f"LLM error {resp.status_code}: {resp.text[:200]}")
 
     body = resp.json()
-    text = body["choices"][0]["message"]["content"]
+    # content pode vir vazio em modelo de raciocínio — a rodada registra o
+    # vazio como evidência (label não extraído), não inventa erro
+    text = body["choices"][0]["message"].get("content") or ""
     usage = body.get("usage", {})
     return text, {
         "latency_ms": latency_ms,

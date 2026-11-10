@@ -1,4 +1,4 @@
 variant,runs,errors,labeled,avg_latency_ms,labels
-v1_short,3,0,3,120.0,quente
-v2_structured,3,0,3,120.0,quente
-v3_criteria,3,0,3,120.0,quente
+v1_short,12,0,0,760.69,
+v2_structured,12,0,4,734.59,"frio, quente"
+v3_criteria,12,5,1,809.45,insufficient_data
